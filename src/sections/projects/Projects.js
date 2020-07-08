@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Showcase from '../../components/showcase/Showcase';
 import Description from '../../components/Description';
 import ProjectIcon from '../../images/Icons/ProjectIcon';
-import CloCardsLogo from './clocardslogo.png'
+import CloCardsLogo from './headerImages/clocardslogo.png'
 import {gray} from '../../styles';
 
 import ClocardsEdit from './clocardsImages/clocards-edit.png';

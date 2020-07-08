@@ -4,8 +4,8 @@ import {blue} from '../../styles';
 import Title from '../../components/Title';
 import WorkIcon from '../../images/Icons/WorkIcon';
 import Header from '../../components/Header';
-import CodeKitchenLogo from './codekitchenlogo.png';
-import EZIotLogo from './eziotlogo.png';
+import CodeKitchenLogo from './headerImages/codekitchenlogo.png';
+import EZIotLogo from './headerImages/eziotlogo.png';
 import Showcase from '../../components/showcase/Showcase';
 
 import flowDesktop from './flowImages/flow-desktop.png';

@@ -48,33 +48,30 @@ export default (props) => {
   const [offset, setOffset] = useState('0px'); 
 
   useEffect (()=> {
-    const moveOnScroll = () => {
+    const updatePos = () => {
       let top = containerTop.current.getBoundingClientRect().top;
-      // Only move when title is scrolled into view (height > top) and 
+      // Possible optimization: if (height > top && top >= -100)
+      // Only update when title is scrolled into view (height > top) and 
       // stops when scrolls past the end of title (top >= -100) 
       // ^ accounts for extra 100px to ensure enough time to center
-      if (height > top && top >= -100) {
-        if (top < 0){
-          setOffset(((width / 2) - 50) + 'px'); 
-        } else {
-          // Divided by 2 to center and -50px because logo is 100pixels
-          setOffset((((1 - (top / height)) * width) / 2) - 50 + 'px');
-        }
-      }
+
+      // Beyond the end of title, so centered, else will go beyond 
+      if (top < 0){
+        setOffset(((width / 2) - 50) + 'px'); 
+      } else {
+        // Divided by 2 to center and -50px because logo is 100pixels
+        setOffset((((1 - (top / height)) * width) / 2) - 50 + 'px');
+      } 
     }
 
-    // Adjust position because of resize
-    let top = containerTop.current.getBoundingClientRect().top;
-    // Beyond the end of title, so centered, else will go beyond 
-    if (top < 0) {
-      setOffset(((width / 2) - 50) + 'px'); 
-    } else {
-      setOffset((((1 - (top / height)) * width) / 2) - 50 + 'px');
-    }
+    // Executed when window is resized (height/width changed);
+    updatePos();
 
-    // Update moveOnScroll with new width and height whenever resized
-    window.addEventListener('scroll', moveOnScroll);
-    return ()=>{window.removeEventListener('scroll', moveOnScroll)};
+    // Update the updatePos func with new width and height whenever resized
+    window.addEventListener('scroll', updatePos);
+    // For when user reloads
+    window.addEventListener('load', updatePos);
+    return ()=>{window.removeEventListener('scroll', updatePos)};
   }, [height, width]);
 
   let logo;

@@ -5,7 +5,7 @@ import SkillsIcon from '../../images/Icons/SkillsIcon';
 import BarGraph from '../../components/BarGraph';
 import {blue} from '../../styles';
 
-import JSLogo from './jsLogo.png';
+import JSLogo from './bargraphLogos/jsLogo.png';
 
 export default () => {
   const skillsData = [{name: '#1 Javascript', logo: JSLogo}, {name: '#2 Java'}];
