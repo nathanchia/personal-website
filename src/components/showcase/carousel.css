@@ -3,7 +3,6 @@
 */
 .carousel .slide {
   background: none;
-  width: 100px;
 }
 
 /*
@@ -11,20 +10,20 @@
 */
 .carousel .control-next.control-arrow:before {
   content: "";
-  border: solid #0135ad;
+  border: solid #535353;
   border-width: 0 4px 4px 0;
   display: inline-block;
-  padding: 14px;
+  padding: 10px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 
 .carousel .control-prev.control-arrow:before {
   content: "";
-  border: solid #0135ad;
+  border: solid #535353;
   border-width: 0 4px 4px 0;
   display: inline-block;
-  padding: 14px;
+  padding: 10px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }

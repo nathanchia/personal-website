@@ -48,9 +48,9 @@ export default (props) => {
   const [offset, setOffset] = useState('0px'); 
 
   useEffect (()=> {
-    const listenToScroll = () => {
+    const moveOnScroll = () => {
       let top = containerTop.current.getBoundingClientRect().top;
-      // Only update when title is scrolled into view (height > top) and 
+      // Only move when title is scrolled into view (height > top) and 
       // stops when scrolls past the end of title (top >= -100) 
       // ^ accounts for extra 100px to ensure enough time to center
       if (height > top && top >= -100) {
@@ -72,9 +72,9 @@ export default (props) => {
       setOffset((((1 - (top / height)) * width) / 2) - 50 + 'px');
     }
 
-    // Update listenToScroll with new width and height whenever resized
-    window.addEventListener('scroll', listenToScroll);
-    return ()=>{window.removeEventListener('scroll', listenToScroll)};
+    // Update moveOnScroll with new width and height whenever resized
+    window.addEventListener('scroll', moveOnScroll);
+    return ()=>{window.removeEventListener('scroll', moveOnScroll)};
   }, [height, width]);
 
   let logo;

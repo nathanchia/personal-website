@@ -4,7 +4,7 @@ import Cover from './sections/Cover';
 import About from './sections/About';
 import Experience from './sections/experience/Experience';
 import Projects from './sections/projects/Projects';
-import Skills from './sections/Skills';
+import Skills from './sections/skills/Skills';
 
 import ToUp from './components/toUp/ToUp';
 

@@ -6,7 +6,7 @@ import WorkIcon from '../../images/Icons/WorkIcon';
 import Header from '../../components/Header';
 import CodeKitchenLogo from './codekitchenlogo.png';
 import EZIotLogo from './eziotlogo.png';
-import Showcase from '../../components/Showcase';
+import Showcase from '../../components/showcase/Showcase';
 
 import flowDesktop from './flowImages/flow-desktop.png';
 import flowMobile from './flowImages/flow-mobile.png';
@@ -43,8 +43,8 @@ export default () => {
           description={'CodeKitchen  is a code, design, branding, and consulting agency that specializes in high end frontend development but also provides design, backend, and full stack application development.'}
         />
        
-        <Showcase pics={bettrPics} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
-        <Showcase pics={flowPics} title={'Flow'} background={"url('/flow-background.png');"}/>
+        <Showcase pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
+        <Showcase pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={"url('/flow-background.png');"}/>
 
         <Header 
           logo={<img src={EZIotLogo} alt={'EZIot Logo'} style={{height:'120px', width:'120px'}}/>}

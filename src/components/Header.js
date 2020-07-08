@@ -22,7 +22,7 @@ const Title = styled.h2`
   color: ${blue};
   text-align:center; 
   font-family: ${text}
-  font-size: 1.5em;
+  font-size: 1.2em;
 `;
 
 const Description = styled.p`
@@ -33,7 +33,7 @@ const Description = styled.p`
   color: ${gray};
   text-align: center;
   font-family: ${text}
-  font-size: 1em;
+  font-size: 0.8em;
 `;
 
 export default (props) => {

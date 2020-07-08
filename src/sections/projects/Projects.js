@@ -2,7 +2,8 @@ import React from 'react';
 
 import Title from '../../components/Title';
 import Header from '../../components/Header';
-import Showcase from '../../components/Showcase';
+import Showcase from '../../components/showcase/Showcase';
+import Description from '../../components/Description';
 import ProjectIcon from '../../images/Icons/ProjectIcon';
 import CloCardsLogo from './clocardslogo.png'
 import {gray} from '../../styles';
@@ -29,7 +30,9 @@ export default () => {
           description={'Clocards is a mobile app designed to display your namecard and resume in virtual coordinates. Find other users in your proximity and sort them by distance for an easier netwroking process.'}
         />
 
-        <Showcase pics={clocardsPics} />
+        <Showcase pics={clocardsPics} maxWidth={280} widthFraction={2} />
+
+        <Description />
       </div>
   );
 }
