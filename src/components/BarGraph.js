@@ -22,10 +22,10 @@ const Title = styled.div`
     font-size: 1.2em;
 `;
 
-// +115 px to account for 75 pixels shifted to right
-// for names, and +40 pixels for logos on end of bars
+// +123 px to account for 75 pixels shifted to right
+// for names, and +48 pixels for logos on end of bars
 const Graph = styled.svg`
-    width: calc(50% + 115px);
+    width: calc(50% + 123px);
 `;
 
 export default (props) => {
@@ -59,7 +59,7 @@ export default (props) => {
             let top = graphTop.current.getBoundingClientRect().top;
             
             // Only expand when component is visible, +30 px for padding
-            if (height > top + 30) {
+            if (height > top + 20) {
                 updateData();
 
                 setViewed(true);
@@ -114,9 +114,9 @@ export default (props) => {
                                     <image
                                         href={data.logo}
                                         x = {state.logoPos}
-                                        y = {data.y}
-                                        width = {20}
-                                        height = {20}
+                                        y = {data.y - 6}
+                                        width = {30}
+                                        height = {30}
                                     >
                                     </image>
                                 </g>

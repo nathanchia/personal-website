@@ -6,6 +6,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const Container = styled.div`
     height: ${props => (props.height / 3 + 'px')};
+    padding: 10px;
 
     display:flex;
     align-items: center;
@@ -23,7 +24,7 @@ export default () => {
     const [text, setText] = useState('|');
     
     // Enter phrases to display here
-    const phrases = [''];
+    const phrases = ['Available for employment', 'Available for freelance', 'Malaysian', 'Fluent in English, Mandarin, and Malay'];
 
     let length;  
     let timerId;

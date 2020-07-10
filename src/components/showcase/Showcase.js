@@ -9,10 +9,10 @@ import { blue, text } from '../../styles';
 
 // Required props: title, pics, widthFraction, maxWidth
 // Optional props: background <= in the form "url('/flow-background.png');" 
+//                 noPadding <= boolean, usually because no title prop
 
 const Container = styled.div`
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: ${props => props.noPadding ? '0px' : '60px'};
 
     background-image: ${props => (props.background)}
     background-position: center; 
@@ -33,13 +33,13 @@ export default (props) => {
     const {width} = useWindowDimensions();
 
     return (
-        <Container background={props.background}>
+        <Container background={props.background} noPadding={props.noPadding}>
             <Title>
                 {props.title}
             </Title>
 
-            <Carousel showThumbs={false} showArrows={true}>
-                    {props.pics.map((pic, index)=> <img src={pic} key={index} style={{height:'auto',  width: (width / props.widthFraction), maxWidth: (props.maxWidth)}} alt={'Portfolio'}/>)}
+            <Carousel infiniteLoop={true} showThumbs={false} showArrows={true}>
+                {props.pics.map((pic, index)=> <img src={pic} key={index} style={{height:'auto',  width: (width / props.widthFraction), maxWidth: (props.maxWidth)}} alt={'Portfolio'}/>)}
             </Carousel> 
     </Container>
     );

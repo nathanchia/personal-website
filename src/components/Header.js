@@ -7,7 +7,7 @@ import {blue, gray, text} from '../styles';
 
 const Container = styled.div`
   position: relative;
-  padding-top: 20px;
+  padding-top: 35px;
   padding-bottom: 20px;
 
   display:flex;

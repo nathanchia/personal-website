@@ -6,9 +6,11 @@ import BarGraph from '../../components/BarGraph';
 import {blue} from '../../styles';
 
 import JSLogo from './bargraphLogos/jsLogo.png';
+import JavaLogo from './bargraphLogos/javaLogo.png';
+import PythonLogo from './bargraphLogos/pythonLogo.png'
 
 export default () => {
-  const skillsData = [{name: '#1 Javascript', logo: JSLogo}, {name: '#2 Java'}];
+  const skillsData = [{name: '#1 Javascript', logo: JSLogo}, {name: '#2 Java', logo: JavaLogo}, {name:'#3 Python', logo: PythonLogo}];
   return (
       <div id='skills'>
         <Title 

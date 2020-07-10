@@ -28,11 +28,11 @@ const Logo = styled.div`
 `;
 
 const LogoLeft = styled(Logo)`
-  left: ${props => props.offset}; 
+  left: ${props => props.offset + 'px'}; 
 `;
 
 const LogoRight = styled(Logo)`
-  right: ${props => props.offset}; 
+  right: ${props => props.offset + 'px'}; 
 `;
 
 const Title = styled.h1`
@@ -45,23 +45,21 @@ const Title = styled.h1`
 export default (props) => {
   const { height, width } = useWindowDimensions();
   const containerTop = useRef(null);
-  const [offset, setOffset] = useState('0px'); 
+  const [offset, setOffset] = useState(0); 
 
   useEffect (()=> {
     const updatePos = () => {
       let top = containerTop.current.getBoundingClientRect().top;
-      // Possible optimization: if (height > top && top >= -100)
-      // Only update when title is scrolled into view (height > top) and 
-      // stops when scrolls past the end of title (top >= -100) 
-      // ^ accounts for extra 100px to ensure enough time to center
-
-      // Beyond the end of title, so centered, else will go beyond 
-      if (top < 0){
-        setOffset(((width / 2) - 50) + 'px'); 
-      } else {
-        // Divided by 2 to center and -50px because logo is 100pixels
-        setOffset((((1 - (top / height)) * width) / 2) - 50 + 'px');
-      } 
+      // Only update when title is within screen height (x2 for reload)
+      if (height * 2 > top && top >= -height) {
+        // Beyond the end of title, so centered, else will go beyond 
+        if (top < 0) {
+          setOffset(((width / 2) - 50)); 
+        } else {
+          // Divided by 2 to center and -50px because logo is 100pixels
+           setOffset((((1 - (top / height)) * width) / 2) - 50);
+        }
+      }
     }
 
     // Executed when window is resized (height/width changed);

@@ -13,8 +13,13 @@ import ClocardsPing from './clocardsImages/clocards-ping.png';
 import ClocardsFavs from './clocardsImages/clocards-favs.png';
 import ClocardsDisplay from './clocardsImages/clocards-display.png';
 
+import ReactNativeLogo from '../toolsImages/react-native-logo.png';
+import PythonLogo from '../toolsImages/python-logo.png';
+import FlaskLogo from '../toolsImages/flask-logo.png';
+
 export default () => {
   const clocardsPics = [ClocardsEdit, ClocardsPing, ClocardsFavs, ClocardsDisplay];
+  const clocardsTools = [{image: ReactNativeLogo, name: 'React Native'}, {image: PythonLogo, name: 'Python'}, {image: FlaskLogo, name: 'Flask'}]
 
   return (
       <div id='projects'>
@@ -30,9 +35,9 @@ export default () => {
           description={'Clocards is a mobile app designed to display your namecard and resume in virtual coordinates. Find other users in your proximity and sort them by distance for an easier netwroking process.'}
         />
 
-        <Showcase pics={clocardsPics} maxWidth={280} widthFraction={2} />
+        <Showcase pics={clocardsPics} maxWidth={280} widthFraction={2} noPadding={true}/>
 
-        <Description />
+        <Description tools={clocardsTools}/>
       </div>
   );
 }
