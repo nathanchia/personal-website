@@ -3,43 +3,58 @@ import React, {useRef, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import {gray, blue, title} from '../styles';
+import Links from '../components/Links';
 
-// Required Props: icon (Component), title (string), 
-// main (boolean) <= if true, gray back + logos slide in from right, blue + left otherwise.
+// Required Props: icon (Component), title (string), linkInfo
+// right (boolean) <= if true, logo slide in from right, left otherwise
 
 // overflow: hidden since Logo may be outside screen when scrolling
 const Container = styled.div`
-  height: ${props => (props.height + 'px')};
+  height: 100vh;
+  min-height: 350px;
   overflow: hidden;
-  background-color: ${props => props.main ? gray : blue};
+  background-color: ${gray};
   position: relative;
   display:flex;
   align-items: center;
+  justify-content: center;
 `;
 
 // Width of 100 as svg of all logos set to 100px as well,
 // and to ensure center allignment as Title text may overflow this container
-const Logo = styled.div`
+const LogoLeft = styled.div.attrs(props => ({
+  style: {
+    left: props.offset,
+  },
+}))`
   width: 100px;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const LogoLeft = styled(Logo)`
-  left: ${props => props.offset + 'px'}; 
-`;
-
-const LogoRight = styled(Logo)`
-  right: ${props => props.offset + 'px'}; 
-`;
-
+`
+const LogoRight = styled.div.attrs(props => ({
+  style: {
+    right: props.offset,
+  },
+}))`
+  width: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 const Title = styled.h1`
   margin-top: 20px;
-  color: ${props => props.main ? blue : gray};
+  color: ${blue};
   font-family: ${title}
   font-size: 2em;
+`;
+
+const LinksContainer = styled.div`
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
 `;
 
 export default (props) => {
@@ -73,23 +88,26 @@ export default (props) => {
   }, [height, width]);
 
   let logo;
-  if (props.main) {
+  if (props.right) {
     logo =
       <LogoRight offset={offset}>
         {props.icon}
-        <Title main={props.main}>{props.title}</Title>
+        <Title >{props.title}</Title>
       </LogoRight>;
   } else {
     logo =   
       <LogoLeft offset={offset}>
         {props.icon}
-        <Title main={props.main}>{props.title}</Title>
+        <Title >{props.title}</Title>
       </LogoLeft>;
   }
 
   return (
-    <Container ref={containerTop} height={height} main={props.main}>
+    <Container ref={containerTop} height={height} >
       {logo}
+      <LinksContainer>
+        <Links linkInfo={props.linkInfo}/>
+      </LinksContainer>
     </Container>
   );
 }

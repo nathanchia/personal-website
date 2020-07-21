@@ -7,13 +7,12 @@ import './carousel.css'
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { blue, text } from '../../styles';
 
-// Required props: title, pics, widthFraction, maxWidth
+// Required props: title, pics, widthFraction, maxWidth, isModalVisible <= if modal visible, hide arrows
 // Optional props: background <= in the form "url('/flow-background.png');" 
 //                 noPadding <= boolean, usually because no title prop
 
 const Container = styled.div`
     padding-top: ${props => props.noPadding ? '0px' : '60px'};
-
     background-image: ${props => (props.background)}
     background-position: center; 
     background-repeat: no-repeat;
@@ -38,8 +37,8 @@ export default (props) => {
                 {props.title}
             </Title>
 
-            <Carousel infiniteLoop={true} showThumbs={false} showArrows={true}>
-                {props.pics.map((pic, index)=> <img src={pic} key={index} style={{height:'auto',  width: (width / props.widthFraction), maxWidth: (props.maxWidth)}} alt={'Portfolio'}/>)}
+            <Carousel infiniteLoop={true} showThumbs={false} showArrows={!props.isModalVisible}>
+                {props.pics && props.pics.map((pic, index)=> <img src={pic} key={index} style={{height:'auto',  width: (width / props.widthFraction), maxWidth: (props.maxWidth)}} alt={'Portfolio'}/>)}
             </Carousel> 
     </Container>
     );

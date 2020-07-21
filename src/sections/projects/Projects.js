@@ -6,7 +6,6 @@ import Showcase from '../../components/showcase/Showcase';
 import Description from '../../components/Description';
 import ProjectIcon from '../../images/Icons/ProjectIcon';
 import CloCardsLogo from './headerImages/clocardslogo.png'
-import {gray} from '../../styles';
 
 import ClocardsEdit from './clocardsImages/clocards-edit.png';
 import ClocardsPing from './clocardsImages/clocards-ping.png';
@@ -17,25 +16,32 @@ import ReactNativeLogo from '../toolsImages/react-native-logo.png';
 import PythonLogo from '../toolsImages/python-logo.png';
 import FlaskLogo from '../toolsImages/flask-logo.png';
 
-export default () => {
+// Required Props: isModalVisible <= hide or show arrows of carousels based on modal visibility
+
+export default (props) => {
   const clocardsPics = [ClocardsEdit, ClocardsPing, ClocardsFavs, ClocardsDisplay];
   const clocardsTools = [{image: ReactNativeLogo, name: 'React Native'}, {image: PythonLogo, name: 'Python'}, {image: FlaskLogo, name: 'Flask'}]
+  const linkInfo = [{text:'MOBILE APP', id:'app'}]
 
   return (
       <div id='projects'>
         <Title 
-            main = {false}
-            icon={<ProjectIcon fill={gray}/>}
+            right = {true}
+            icon={<ProjectIcon />}
             title={'Projects'}
+            linkInfo={linkInfo}
         />
 
-        <Header 
-          logo={<img src={CloCardsLogo} alt={'Clocards Logo'} style={{height:'120px', width:'120px'}}/>}
-          title={'Published Clocards to the Play Store'} 
-          description={'Clocards is a mobile app designed to display your namecard and resume in virtual coordinates. Find other users in your proximity and sort them by distance for an easier netwroking process.'}
-        />
+        <div id='app'>
+          <Header 
+            logo={<img src={CloCardsLogo} alt={'Clocards Logo'} style={{height:'120px', width:'120px'}}/>}
+            title={'Published Clocards to the Play Store'} 
+            description={'Clocards is a mobile app designed to display your namecard and resume in virtual coordinates. Find other users in your proximity and sort them by distance for an easier netwroking process.'}
+          />
+        </div>
 
-        <Showcase pics={clocardsPics} maxWidth={280} widthFraction={2} noPadding={true}/>
+
+        <Showcase isModalVisible={props.isModalVisible} pics={clocardsPics} maxWidth={280} widthFraction={2} noPadding={true}/>
 
         <Description tools={clocardsTools}/>
       </div>

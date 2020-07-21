@@ -1,71 +1,46 @@
 import React from 'react';
-import { Link } from 'react-scroll';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import SvgLines from 'react-mt-svg-lines';    
 
-import {gray, blue, text } from '../styles';
-import useWindowDimensions from '../hooks/useWindowDimensions';
+import Links from '../components/Links';
+import {gray} from '../styles';
+import Portrait from '../images/Images/Portrait';
 
 const Container = styled.div`
-  height: ${props => (props.height + 'px')};
-  background-color: ${gray};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 350px;
+    background-color: ${gray};
 `;
 
-// height change when portrait
-const Links = styled.div`
-    height: 100%;
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-evenly;
+const PortraitContainer = styled.div`
+    flex: 8;
+    display: flex;
     align-items: center;
 `;
 
-const LinkStyled = styled(Link)`
-    color: ${blue};
-    &:hover {
-        cursor: pointer;
-    }
-    font-size: 1em;
-    font-family: ${text};
+const LinksContainer = styled.div`
+    flex: 2;
+    width: 100%;
 `;
 
 export default () => {
-    const { height } = useWindowDimensions();
-    const duration = 1000;
+    const linkInfo = [{text: 'ABOUT', id:'about'}, {text: 'EXPERIENCE', id:'experience'}, {text: 'PROJECTS', id:'projects'}, {text: 'SKILLS', id:'skills'}]
+
     return (
-        <Container id='cover' height={height} >
-            <Links>
-                <LinkStyled
-                    to='about'
-                    smooth={true}
-                    duration={duration}
-                >
-                    ABOUT
-                </LinkStyled>
+        <Container id='cover' >
+            <PortraitContainer>
+                <SvgLines animate={ true } duration={ 5000 }>
+                    <Portrait />
+                </SvgLines>
+            </PortraitContainer>
 
-                <LinkStyled
-                    to='experience'
-                    smooth={true}
-                    duration={duration}
-                >
-                    EXPERIENCE
-                </LinkStyled>
-
-                <LinkStyled
-                    to='projects'
-                    smooth={true}
-                    duration={duration}
-                >
-                    PROJECTS
-                </LinkStyled>
-
-                <LinkStyled
-                    to='skills'
-                    smooth={true}
-                    duration={duration}
-                >
-                    SKILLS
-                </LinkStyled>
-            </Links>
+            <LinksContainer>
+                <Links linkInfo={linkInfo}/>
+            </LinksContainer>
         </Container>
     );
 }

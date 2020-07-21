@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {blue} from '../../styles';
 import Title from '../../components/Title';
 import WorkIcon from '../../images/Icons/WorkIcon';
 import Header from '../../components/Header';
@@ -34,38 +33,46 @@ import reactNativeLogo from '../toolsImages/react-native-logo.png';
 import electronLogo from '../toolsImages/electron-logo.png';
 import javaLogo from '../toolsImages/java-logo.png';
 
-export default () => {
+// Required Props: isModalVisible <= hide or show arrows of carousels based on modal visibility
+
+export default (props) => {
   const flowPics = [flowDesktop, flowMobile, flowPopup, flowPopupMenu, flowActivate, flowWelcome];
   const bettrPics = [bettrTasks, bettrTasksDark, bettrCreateTask, bettrCreateTaskDark, bettrHome, bettrProfiles, bettrProxies, bettrSettings, bettrCreateProfile, bettrCreateProfileDark];
   const flowTools = [{image: htmlLogo, name:'HTML'}, {image: cssLogo, name:'CS'}, {image: JSLogo, name:'JavaScript'}]
   const bettrTools = [{image: reactNativeLogo, name:'ReactJS'}, {image: electronLogo, name: 'ElectronJS'}];
   const ezTools = [{image: javaLogo, name: 'Java'}];
+  const linkInfo = [{text:'FREELANCE', id:'freelance'}, {text:'INTERNSHIP', id:'internship'}]
 
   return (
       <div id='experience' >
         <Title 
-            main = {true}
-            icon={<WorkIcon fill={blue}/>}
+            right = {false}
+            icon={<WorkIcon />}
             title={'Experience'}
+            linkInfo={linkInfo}
         />
 
-        <Header 
-          logo={<img src={CodeKitchenLogo} alt={'CodeKitchen Logo'} style={{height:'120px', width:'120px'}}/>}
-          title={'Freelancer for CodeKitchen'} 
-          description={'CodeKitchen  is a code, design, branding, and consulting agency that specializes in high end frontend development but also provides design, backend, and full stack application development.'}
-        />
-        <Showcase pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
+        <div id='freelance'>
+          <Header 
+            logo={<img src={CodeKitchenLogo} alt={'CodeKitchen Logo'} style={{height:'120px', width:'120px'}}/>}
+            title={'Freelancer for CodeKitchen'} 
+            description={'CodeKitchen  is a code, design, branding, and consulting agency that specializes in high end frontend development but also provides design, backend, and full stack application development.'}
+          />
+        </div>
+        <Showcase isModalVisible={props.isModalVisible} pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
         <Description tools={bettrTools} text={"BettrBot is a desktop application specializing in checkout automation of limited releases for Supreme. The application supports light and dark theme modes."}/>
-        <Showcase pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={"url('/flow-background.png');"}/>
+        <Showcase isModalVisible={props.isModalVisible} pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={"url('/flow-background.png');"}/>
         <Description tools={flowTools} text={"Flow is an extension tool for automating checkout of items from platforms such as Shopify, Supreme, and YeezySupply. Users are able to customize the extension's functionality through an external webpage."}/>
 
-        <hr style={{marginTop:'70px', marginBottom:'50px', width: '70%'}}/>
+        <hr style={{marginTop:'70px', width: '70%'}}/>
 
-        <Header 
-          logo={<img src={EZIotLogo} alt={'EZIot Logo'} style={{height:'120px', width:'120px'}}/>}
-          title={'Intern at EZIot'} 
-          description={'EZIot is a startup located in Malaysia that provides solutions and services to help integrate IoT features such as hardware manufactoring, cloud services, and end-user mobile apps into products.'}
-        />
+        <div id='internship'>
+          <Header 
+            logo={<img src={EZIotLogo} alt={'EZIot Logo'} style={{height:'120px', width:'120px'}}/>}
+            title={'Intern at EZIot'} 
+            description={'EZIot is a startup located in Malaysia that provides solutions and services to help integrate IoT features such as hardware manufactoring, cloud services, and end-user mobile apps into products.'}
+          />
+        </div>
         <Description tools={ezTools} text={"My internship at EZIot focused on the backend."}/>
       </div>
   );

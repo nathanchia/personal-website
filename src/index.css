@@ -1,3 +1,6 @@
+/*
+  overflow-x for parallex effect of Title component
+*/
 body {
   margin: 0;
   overflow-x: hidden;

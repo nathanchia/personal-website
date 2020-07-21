@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import {gray, special} from '../styles';
-import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const Container = styled.div`
-    height: ${props => (props.height / 3 + 'px')};
+    height: 33.3vh;
+    min-height: 150px;
     padding: 10px;
 
     display:flex;
@@ -19,12 +19,11 @@ const Container = styled.div`
 `;
 
 export default () => {
-    const { height } = useWindowDimensions();
     // '|' used to mimic a typewritor cursor
     const [text, setText] = useState('|');
     
     // Enter phrases to display here
-    const phrases = ['Available for employment', 'Available for freelance', 'Malaysian', 'Fluent in English, Mandarin, and Malay'];
+    const phrases = ['Available for employment', 'Available for freelance', 'Malaysian', 'Responsive Everything'];
 
     let length;  
     let timerId;
@@ -73,7 +72,7 @@ export default () => {
     }, []);
 
     return (
-        <Container height={height} >
+        <Container >
             {text}
         </Container>
     );
