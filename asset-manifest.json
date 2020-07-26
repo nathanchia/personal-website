@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.3dd1b546.chunk.css",
-    "main.js": "/personal-website/static/js/main.9c0e376a.chunk.js",
-    "main.js.map": "/personal-website/static/js/main.9c0e376a.chunk.js.map",
+    "main.js": "/personal-website/static/js/main.2a5c0668.chunk.js",
+    "main.js.map": "/personal-website/static/js/main.2a5c0668.chunk.js.map",
     "runtime-main.js": "/personal-website/static/js/runtime-main.3731dab7.js",
     "runtime-main.js.map": "/personal-website/static/js/runtime-main.3731dab7.js.map",
     "static/css/2.fb346933.chunk.css": "/personal-website/static/css/2.fb346933.chunk.css",
-    "static/js/2.8f6e72f1.chunk.js": "/personal-website/static/js/2.8f6e72f1.chunk.js",
-    "static/js/2.8f6e72f1.chunk.js.map": "/personal-website/static/js/2.8f6e72f1.chunk.js.map",
+    "static/js/2.77a9d519.chunk.js": "/personal-website/static/js/2.77a9d519.chunk.js",
+    "static/js/2.77a9d519.chunk.js.map": "/personal-website/static/js/2.77a9d519.chunk.js.map",
     "index.html": "/personal-website/index.html",
-    "precache-manifest.981ae79256b4d9803534b6717dc71f2b.js": "/personal-website/precache-manifest.981ae79256b4d9803534b6717dc71f2b.js",
+    "precache-manifest.000eb5a670c1948e6dc273da8f22446c.js": "/personal-website/precache-manifest.000eb5a670c1948e6dc273da8f22446c.js",
     "service-worker.js": "/personal-website/service-worker.js",
     "static/css/2.fb346933.chunk.css.map": "/personal-website/static/css/2.fb346933.chunk.css.map",
     "static/css/main.3dd1b546.chunk.css.map": "/personal-website/static/css/main.3dd1b546.chunk.css.map",
-    "static/js/2.8f6e72f1.chunk.js.LICENSE.txt": "/personal-website/static/js/2.8f6e72f1.chunk.js.LICENSE.txt",
+    "static/js/2.77a9d519.chunk.js.LICENSE.txt": "/personal-website/static/js/2.77a9d519.chunk.js.LICENSE.txt",
+    "static/media/about-background.jpg": "/personal-website/static/media/about-background.b6ec2625.jpg",
     "static/media/apoLogo.png": "/personal-website/static/media/apoLogo.3e4596e4.png",
+    "static/media/bettr-background.png": "/personal-website/static/media/bettr-background.f317eb4f.png",
     "static/media/bettr-create-profile-dark.png": "/personal-website/static/media/bettr-create-profile-dark.a66ed3c6.png",
     "static/media/bettr-create-profile.png": "/personal-website/static/media/bettr-create-profile.340a639e.png",
     "static/media/bettr-create-tasks-dark.png": "/personal-website/static/media/bettr-create-tasks-dark.71b928d6.png",
@@ -40,6 +42,7 @@
     "static/media/electron-logo.png": "/personal-website/static/media/electron-logo.42ce9c1f.png",
     "static/media/eziotlogo.png": "/personal-website/static/media/eziotlogo.22914c06.png",
     "static/media/flow-activate.png": "/personal-website/static/media/flow-activate.97047de2.png",
+    "static/media/flow-background.png": "/personal-website/static/media/flow-background.f6269569.png",
     "static/media/flow-desktop.png": "/personal-website/static/media/flow-desktop.2864b5d7.png",
     "static/media/flow-mobile.png": "/personal-website/static/media/flow-mobile.83256fcc.png",
     "static/media/flow-popup-menu.png": "/personal-website/static/media/flow-popup-menu.879958d2.png",
@@ -57,8 +60,8 @@
   "entrypoints": [
     "static/js/runtime-main.3731dab7.js",
     "static/css/2.fb346933.chunk.css",
-    "static/js/2.8f6e72f1.chunk.js",
+    "static/js/2.77a9d519.chunk.js",
     "static/css/main.3dd1b546.chunk.css",
-    "static/js/main.9c0e376a.chunk.js"
+    "static/js/main.2a5c0668.chunk.js"
   ]
 }
