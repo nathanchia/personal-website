@@ -13,7 +13,7 @@ import { blue, text } from '../../styles';
 
 const Container = styled.div`
     padding-top: ${props => props.noPadding ? '0px' : '60px'};
-    background-image: ${props => (props.background)}
+    background-image: url(${props => props.background});
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,6 +40,6 @@ export default (props) => {
             <Carousel infiniteLoop={true} showThumbs={false} showArrows={!props.isModalVisible}>
                 {props.pics && props.pics.map((pic, index)=> <img src={pic} key={index} style={{height:'auto',  width: (width / props.widthFraction), maxWidth: (props.maxWidth)}} alt={'Portfolio'}/>)}
             </Carousel> 
-    </Container>
+        </Container>
     );
 }

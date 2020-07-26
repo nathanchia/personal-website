@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {text} from '../styles';
 
-// Required props: text
+// Required props: text, background
 
 const Container = styled.div`
     height: calc(66.7vh - 20px);
@@ -12,7 +12,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-image: url('/about-colored.jpg');
+    background-image: url(${props => props.background});
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ const Intro = styled.div`
 
 export default (props) => {
     return (
-        <Container id='about' >
+        <Container background={props.background} id='about' >
             <Intro>{props.text}</Intro>
         </Container>
     );

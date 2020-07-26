@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import Cover from './sections/Cover';
-import About from './sections/About';
+import About from './sections/About/About';
 import Experience from './sections/experience/Experience';
 import Projects from './sections/projects/Projects';
 import Skills from './sections/skills/Skills';

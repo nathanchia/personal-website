@@ -14,6 +14,7 @@ import flowPopup from './flowImages/flow-popup.png';
 import flowPopupMenu from './flowImages/flow-popup-menu.png';
 import flowActivate from './flowImages/flow-activate.png';
 import flowWelcome from './flowImages/flow-welcome.png';
+import flowBackground from './flowImages/flow-background.png';
 
 import bettrTasks from './bettrbotImages/bettr-tasks.png';
 import bettrTasksDark from './bettrbotImages/bettr-tasks-dark.png';
@@ -25,6 +26,7 @@ import bettrProxies from './bettrbotImages/bettr-proxies.png';
 import bettrSettings from './bettrbotImages/bettr-settings.png';
 import bettrCreateProfile from './bettrbotImages/bettr-create-profile.png';
 import bettrCreateProfileDark from './bettrbotImages/bettr-create-profile-dark.png';
+import bettrBackground from './bettrbotImages/bettr-background.png';
 
 import htmlLogo from '../toolsImages/html-logo.png';
 import cssLogo from '../toolsImages/css-logo.png';
@@ -93,9 +95,9 @@ export default (props) => {
             description={'CodeKitchen  is a code, design, branding, and consulting agency that specializes in high end frontend development but also provides design, backend, and full stack application development.'}
           />
         </div>
-        <Showcase isModalVisible={props.isModalVisible} pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
+        <Showcase isModalVisible={props.isModalVisible} pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={bettrBackground}/>
         <Description pars={bettrPars} tools={bettrTools} />
-        <Showcase isModalVisible={props.isModalVisible} pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={"url('/flow-background.png');"}/>
+        <Showcase isModalVisible={props.isModalVisible} pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={flowBackground}/>
         <Description pars={flowPars} tools={flowTools}/>
 
         <hr style={{marginTop:'70px', width: '70%'}}/>
