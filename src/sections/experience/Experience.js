@@ -40,8 +40,42 @@ export default (props) => {
   const bettrPics = [bettrTasks, bettrTasksDark, bettrCreateTask, bettrCreateTaskDark, bettrHome, bettrProfiles, bettrProxies, bettrSettings, bettrCreateProfile, bettrCreateProfileDark];
   const flowTools = [{image: htmlLogo, name:'HTML'}, {image: cssLogo, name:'CS'}, {image: JSLogo, name:'JavaScript'}]
   const bettrTools = [{image: reactNativeLogo, name:'ReactJS'}, {image: electronLogo, name: 'ElectronJS'}];
-  const ezTools = [{image: javaLogo, name: 'Java'}];
+  const ezTools = [{image: javaLogo, name: 'Java'}, {image: JSLogo, name:'JavaScript'}];
   const linkInfo = [{text:'FREELANCE', id:'freelance'}, {text:'INTERNSHIP', id:'internship'}]
+
+  const bettrDesc = "BettrBot is a standalone desktop application specializing in the checkout automation of limited releases for Supreme."
+    + " The application supports light and dark theme modes and features a navigation sidebar.";
+  const bettrProgram = "I created the frontend using React and utilized Electron to turn the web-app into a full-fledged, downloadable desktop app."
+    + " The application is resizable and all UI scale appropriately. " 
+    + " The biggest challenge for this project was to adapt to the client's rapidly changing requests."
+    + " For example, the dark theme was requested much later during development."
+    + " Nevertheless, it was a valuable experience and emphasized the importance of clean, efficient code.";
+
+  const flowDesc =  "Flow is an extension tool for automating checkout of items from platforms such as Shopify, Supreme, and YeezySupply."
+    + " Users are able to customize the extension's functionality through an external webpage.";
+  const flowProgram = "Vanilla HTML, CSS, and Javascript was used to develop the frontend as per the client's request."
+    + " The webpage changes layout based on screen size and settings can be enabled/disabled in bulk or individually.";
+
+  const ezDesc = "When I started my internship, EZIot had just finished prototyping their Smart Lightbulb and Smart Switch."
+    + " As an intern, I was responsible for developing the backend used to communicate" 
+    + " between the smart devices to Google Home and Amazon Alexa. The devices had to respond to"
+    + " voice commands in order to turn on/off, change brightness and hue, etc."
+    + " I also needed to create a simple dashboard that displayed relevant information of the devices"
+    + " such as power consumption and current hue/brightness.";
+  const ezProgram = "I was first taught how to use NodeRed: an interface used to drag and connect"
+    + " chunks of Javascript code as a visualization aid for the flow of data."
+    + " Although I was skeptical at first due to the unorthodox workflow, it sped up prototyping greatly."
+    + " The biggest challenge came after when I had to port my working prototype into pure Java."
+  const ezBusiness = "During the final weeks of my internship, I began taking an interest in how the CEO managed the startup."
+    + " He took notice of this, and taught me the basics of managing a company."
+    + " Additionally, I was sent to attend multiple info sessions and talks about IOTs, the Industry 4.0,"
+    + " and Warehouse Automation hosted by the government and other companies."
+    + " The experiences I had here built a solid foundation for programming and also"
+    + " led to me minoring in Entrepreneurship.";
+
+  const ezPars = [ezDesc, ezProgram, ezBusiness];
+  const bettrPars = [bettrDesc, bettrProgram];
+  const flowPars = [flowDesc, flowProgram];
 
   return (
       <div id='experience' >
@@ -60,9 +94,9 @@ export default (props) => {
           />
         </div>
         <Showcase isModalVisible={props.isModalVisible} pics={bettrPics} maxWidth={850} widthFraction={1.1} title={'Bettrbot'} background={"url('/bettr-background.png');"}/>
-        <Description tools={bettrTools} text={"BettrBot is a desktop application specializing in checkout automation of limited releases for Supreme. The application supports light and dark theme modes."}/>
+        <Description pars={bettrPars} tools={bettrTools} />
         <Showcase isModalVisible={props.isModalVisible} pics={flowPics} maxWidth={450} widthFraction={1.2} title={'Flow'} background={"url('/flow-background.png');"}/>
-        <Description tools={flowTools} text={"Flow is an extension tool for automating checkout of items from platforms such as Shopify, Supreme, and YeezySupply. Users are able to customize the extension's functionality through an external webpage."}/>
+        <Description pars={flowPars} tools={flowTools}/>
 
         <hr style={{marginTop:'70px', width: '70%'}}/>
 
@@ -73,7 +107,7 @@ export default (props) => {
             description={'EZIot is a startup located in Malaysia that provides solutions and services to help integrate IoT features such as hardware manufactoring, cloud services, and end-user mobile apps into products.'}
           />
         </div>
-        <Description tools={ezTools} text={"My internship at EZIot focused on the backend."}/>
+        <Description pars={ezPars} tools={ezTools}/>
       </div>
   );
 }

@@ -103,10 +103,12 @@ export default () => {
         apoContent = 
         <ContainerColumn >
             <Image src={ApoLogo} alt={'Alpha Phi Omega'} />
-            <div style={{maxWidth: '275px'}}>
+            <div style={{maxWidth: '450px'}}>
                 <SubTitle>Vice President of Alpha Phi Omega</SubTitle>
                 APO is a fraternity focused on service and giving back to the community. 
-                As Vice President of the Gamma Alpha Chapter, I am responsible for 
+                As Vice President of the Gamma Alpha Chapter, I am responsible for
+                planning service events, keeping track of all members' hours, and maintaining
+                a relationship with other service organizations. 
             </div>
         </ContainerColumn>
     } else {  // Split Image and text into two columns
@@ -153,6 +155,8 @@ export default () => {
                 <SubTitle>Vice President of Alpha Phi Omega</SubTitle>
                 APO is a fraternity focused on service and giving back to the community. 
                 As Vice President of the Gamma Alpha Chapter, I am responsible for
+                planning service events, keeping track of all members' hours, and maintaining
+                a relationship with other service organizations. 
             </div>
         </ContainerRow>
     }

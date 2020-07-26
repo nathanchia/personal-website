@@ -23,7 +23,7 @@ export default () => {
     const [text, setText] = useState('|');
     
     // Enter phrases to display here
-    const phrases = ['Available for employment', 'Available for freelance', 'Malaysian', 'Responsive Everything'];
+    const phrases = ['Available for employment', 'Available for freelance', 'Malaysian', 'Responsive Everything', 'Seeking an internship', 'Full stack with React and Python', 'Fluent in English, Malay, and Chinese', '3 years of Japanese'];
 
     let length;  
     let timerId;

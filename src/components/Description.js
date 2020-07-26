@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { blue, gray, text } from '../styles';
 
-// Required props: text, toolImgs <= an array of tool image urls
+// Required props: pars <= paragraphs in the form of [par1, par2,...], toolImgs <= an array of tool image urls
 
 const Container = styled.div`
   width: min(450px, 85%);
@@ -15,11 +15,11 @@ const Container = styled.div`
   color: ${gray};
   font-family: ${text};
   font-size: 0.8em;
-  text-align: center;  
+  text-align: center; 
 `;
 
 const ToolsTitle = styled.p`
-  margin-top: 40px;
+  margin-top: 20px;
 
   color: ${blue};
   font-size: 1.2em;
@@ -52,7 +52,7 @@ const Tools = (props) => {
 export default (props) => {
   return (
     <Container >
-      {props.text}
+      {props.pars && props.pars.map((par, index) => <div key={index}>{par}<br/><br/></div>)}
 
       <ToolsTitle>Tools Used</ToolsTitle>
       <ToolsContainer>
